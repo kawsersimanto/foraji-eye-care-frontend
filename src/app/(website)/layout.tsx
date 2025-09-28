@@ -1,11 +1,16 @@
-"use client";
+import { Header } from "@/components/header/Header";
 
 const DashboardLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <>{children}</>;
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
 };
 
 export default DashboardLayout;

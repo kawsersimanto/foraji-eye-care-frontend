@@ -3,7 +3,7 @@ import { Metadata } from "next";
 const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Farazy Eye Care Hospital";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 const APP_DESCRIPTION = "We Care, Allah Cure";
-const APP_IMAGE = "/logo.jpg";
+const APP_IMAGE = "/logo.png";
 
 export const getDefaultMetadata = (overrides?: Partial<Metadata>): Metadata => {
   const title = overrides?.title ?? APP_NAME;
