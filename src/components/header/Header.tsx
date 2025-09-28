@@ -49,7 +49,9 @@ export const Header = () => {
               </Link>
             ))}
           </nav>
-          <Button className="text-white">Make Appointment</Button>
+          <Button className="text-white" asChild>
+            <Link href="/appointment">Make Appointment</Link>
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
