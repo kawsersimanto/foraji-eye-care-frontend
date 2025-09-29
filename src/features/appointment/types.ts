@@ -20,4 +20,5 @@ export interface Doctor {
   image: string;
   availableDays: string[];
   timeSlots: string[];
+  branchId: string;
 }

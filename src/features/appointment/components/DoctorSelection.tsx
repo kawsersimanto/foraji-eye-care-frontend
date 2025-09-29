@@ -24,6 +24,7 @@ interface DoctorSelectionProps {
   selectedDoctor: Doctor | null;
   handleDoctorSelect: (doctor: Doctor) => void;
   isDateAvailable: (date: Date) => boolean;
+  selectedBranch: string;
 }
 
 export function DoctorSelection({
@@ -34,8 +35,16 @@ export function DoctorSelection({
   selectedDoctor,
   handleDoctorSelect,
   isDateAvailable,
+  selectedBranch,
 }: DoctorSelectionProps) {
   const selectedDoctorId = form.watch("doctorId");
+
+  const filteredDoctors = doctors.filter(
+    (doctor) =>
+      doctor.branchId === selectedBranch &&
+      (doctor.name.toLowerCase().includes(doctorSearch.toLowerCase()) ||
+        doctor.specialty.toLowerCase().includes(doctorSearch.toLowerCase()))
+  );
 
   return (
     <div className="space-y-6">
@@ -59,17 +68,8 @@ export function DoctorSelection({
           <FormItem>
             <FormLabel>Choose a doctor *</FormLabel>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {doctors
-                .filter(
-                  (doctor) =>
-                    doctor.name
-                      .toLowerCase()
-                      .includes(doctorSearch.toLowerCase()) ||
-                    doctor.specialty
-                      .toLowerCase()
-                      .includes(doctorSearch.toLowerCase())
-                )
-                .map((doctor) => (
+              {filteredDoctors.length > 0 ? (
+                filteredDoctors.map((doctor) => (
                   <Card
                     key={doctor.id}
                     className={`cursor-pointer transition-all hover:shadow-md ${
@@ -98,7 +98,12 @@ export function DoctorSelection({
                       </p>
                     </CardContent>
                   </Card>
-                ))}
+                ))
+              ) : (
+                <Card className="text-sm text-muted-foreground col-span-full text-center mt-4">
+                  <CardContent>No doctors found for this branch</CardContent>
+                </Card>
+              )}
             </div>
             <FormMessage />
           </FormItem>

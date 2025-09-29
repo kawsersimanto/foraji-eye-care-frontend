@@ -65,6 +65,7 @@ export const AppointmentForm = () => {
             selectedDoctor={selectedDoctor}
             handleDoctorSelect={handleDoctorSelect}
             isDateAvailable={isDateAvailable}
+            selectedBranch={selectedBranch}
           />
         )}
         <Button type="submit" className="text-white">

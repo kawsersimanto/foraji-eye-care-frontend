@@ -9,11 +9,30 @@ export const branches = [
 export const doctors: Doctor[] = [
   {
     id: "dr-smith",
-    name: "Dr. Sarah Smith",
+    name: "Dr. Smith",
     specialty: "Cardiologist",
     image: "/female-doctor.png",
     availableDays: ["Monday", "Wednesday", "Friday"],
     timeSlots: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    branchId: "downtown",
+  },
+  {
+    id: "dr-jane",
+    name: "Dr. Jane",
+    specialty: "Cardiologist",
+    image: "/female-doctor.png",
+    availableDays: ["Monday", "Wednesday", "Friday"],
+    timeSlots: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    branchId: "downtown",
+  },
+  {
+    id: "dr-kamal",
+    name: "Dr. Kamal",
+    specialty: "Cardiologist",
+    image: "/female-doctor.png",
+    availableDays: ["Monday", "Wednesday", "Friday"],
+    timeSlots: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    branchId: "downtown",
   },
   {
     id: "dr-johnson",
@@ -22,6 +41,16 @@ export const doctors: Doctor[] = [
     image: "/male-doctor.png",
     availableDays: ["Tuesday", "Thursday", "Saturday"],
     timeSlots: ["8:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
+    branchId: "northside",
+  },
+  {
+    id: "dr-oliver",
+    name: "Dr. Michael Oliver",
+    specialty: "Neurologist",
+    image: "/male-doctor.png",
+    availableDays: ["Tuesday", "Thursday", "Saturday"],
+    timeSlots: ["8:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
+    branchId: "northside",
   },
   {
     id: "dr-williams",
@@ -30,5 +59,6 @@ export const doctors: Doctor[] = [
     image: "/female-doctor.png",
     availableDays: ["Monday", "Tuesday", "Thursday"],
     timeSlots: ["9:30 AM", "11:30 AM", "2:30 PM", "4:30 PM"],
+    branchId: "westend",
   },
 ];
