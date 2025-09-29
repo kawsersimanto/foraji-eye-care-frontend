@@ -1,10 +1,18 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AppointmentForm } from "@/features/appointment/components/AppointmentForm";
 
 const AppointmentPage = () => {
   return (
     <section className="min-h-[60dvh] py-20 flex items-center justify-center">
       <div className="container">
-        <AppointmentForm />
+        <Card className="w-full">
+          <CardHeader className="sr-only">
+            <CardTitle>Patient Appointment Form</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <AppointmentForm />
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
