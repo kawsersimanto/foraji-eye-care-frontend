@@ -67,7 +67,7 @@ export function DoctorSelection({
         render={() => (
           <FormItem>
             <FormLabel>Choose a doctor *</FormLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {filteredDoctors.length > 0 ? (
                 filteredDoctors.map((doctor) => (
                   <Card
@@ -80,10 +80,11 @@ export function DoctorSelection({
                     onClick={() => handleDoctorSelect(doctor)}
                   >
                     <CardContent className="p-4 text-center">
-                      <Avatar className="w-16 h-16 mx-auto mb-3">
+                      <Avatar className="w-16 h-16 mx-auto mb-3 border border-border">
                         <AvatarImage
                           src={doctor.image || "/placeholder.svg"}
                           alt={doctor.name}
+                          className="object-cover object-top"
                         />
                         <AvatarFallback>
                           {doctor.name
