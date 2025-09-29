@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { branches, doctors } from "../constants";
 import { AppointmentFormData, appointmentSchema } from "../schema";
 import { Doctor } from "../types";
@@ -45,7 +46,6 @@ export const AppointmentForm = () => {
       age: "",
       gender: "",
       notes: "",
-      password: "",
       branch: "",
       doctorId: "",
       appointmentDate: undefined,
@@ -82,25 +82,43 @@ export const AppointmentForm = () => {
             name="patientType"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="sr-only">Patient Type</FormLabel>
+                <FormLabel className="text-sm font-medium">
+                  Patient Type
+                </FormLabel>
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
                     value={field.value}
-                    className="flex space-x-6"
+                    className="flex gap-3"
                   >
-                    <FormItem className="flex items-center space-x-2">
+                    <FormItem>
                       <FormControl>
-                        <RadioGroupItem value="new" />
+                        <RadioGroupItem value="new" className="hidden" />
                       </FormControl>
-                      <FormLabel className="font-normal">New Patient</FormLabel>
+                      <FormLabel
+                        className={cn(
+                          "cursor-pointer rounded px-4 py-2 text-sm font-medium border transition",
+                          field.value === "new"
+                            ? "bg-primary text-white border-primary"
+                            : "text-muted-foreground hover:bg-accent"
+                        )}
+                      >
+                        New Patient
+                      </FormLabel>
                     </FormItem>
 
-                    <FormItem className="flex items-center space-x-2">
+                    <FormItem>
                       <FormControl>
-                        <RadioGroupItem value="existing" />
+                        <RadioGroupItem value="existing" className="hidden" />
                       </FormControl>
-                      <FormLabel className="font-normal">
+                      <FormLabel
+                        className={cn(
+                          "cursor-pointer rounded px-4 py-2 text-sm font-medium border transition",
+                          field.value === "existing"
+                            ? "bg-primary text-white border-primary"
+                            : "text-muted-foreground hover:bg-accent"
+                        )}
+                      >
                         Existing Patient
                       </FormLabel>
                     </FormItem>
@@ -205,41 +223,22 @@ export const AppointmentForm = () => {
               />
             </>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone No. *</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Enter your registered phone number"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password *</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="password"
-                        placeholder="Enter your password"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone No. *</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your registered phone number"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           )}
         </div>
 
