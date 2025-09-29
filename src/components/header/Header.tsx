@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -63,11 +64,14 @@ export const Header = () => {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetTitle>
-              <span className="sr-only">Mobile Menu</span>
-            </SheetTitle>
             <SheetContent side="left">
               <SheetHeader>
+                <SheetTitle>
+                  <span className="sr-only">Mobile Menu</span>
+                </SheetTitle>
+                <SheetDescription className="sr-only">
+                  Navigate to the other pages using the mobile navigation.
+                </SheetDescription>
                 <Link href="/" className="flex items-center">
                   <Image
                     src="/logo.png"

@@ -3,7 +3,7 @@ import { AppointmentForm } from "@/features/appointment/components/AppointmentFo
 
 const AppointmentPage = () => {
   return (
-    <section className="min-h-[60dvh] py-20 flex items-center justify-center">
+    <section className="min-h-[60dvh] md:py-20 py-10 flex items-center justify-center">
       <div className="container">
         <Card className="w-full">
           <CardHeader className="sr-only">
