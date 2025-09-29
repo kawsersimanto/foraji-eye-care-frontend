@@ -79,7 +79,7 @@ export function DoctorSelection({
                     }`}
                     onClick={() => handleDoctorSelect(doctor)}
                   >
-                    <CardContent className="p-4 text-center">
+                    <CardContent className="md:p-4 px-2 text-center">
                       <Avatar className="w-16 h-16 mx-auto mb-3 border border-border">
                         <AvatarImage
                           src={doctor.image || "/placeholder.svg"}
@@ -93,10 +93,20 @@ export function DoctorSelection({
                             .join("")}
                         </AvatarFallback>
                       </Avatar>
-                      <h3 className="font-semibold text-sm">{doctor.name}</h3>
-                      <p className="text-xs text-muted-foreground">
-                        {doctor.specialty}
-                      </p>
+                      <h3 className="font-semibold md:text-xl text-base">
+                        {doctor.name}
+                      </h3>
+                      <div>
+                        <p className="text-sm text-muted-foreground font-medium mb-2.5">
+                          {doctor.specialty}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          Chamber: {doctor.chamberNo}, {doctor.floor} Floor,{" "}
+                        </p>
+                        <p className="md:text-sm text-xs text-muted-foreground">
+                          {doctor.address}
+                        </p>
+                      </div>
                     </CardContent>
                   </Card>
                 ))

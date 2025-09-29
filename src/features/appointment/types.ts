@@ -21,4 +21,7 @@ export interface Doctor {
   availableDays: string[];
   timeSlots: string[];
   branchId: string;
+  chamberNo?: string;
+  floor?: string;
+  address?: string;
 }

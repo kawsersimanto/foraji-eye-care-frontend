@@ -15,6 +15,9 @@ export const doctors: Doctor[] = [
     availableDays: ["Monday", "Wednesday", "Friday"],
     timeSlots: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
     branchId: "downtown",
+    chamberNo: "101",
+    floor: "1st",
+    address: "123 Downtown St, City",
   },
   {
     id: "dr-jane",
@@ -24,6 +27,9 @@ export const doctors: Doctor[] = [
     availableDays: ["Monday", "Wednesday", "Friday"],
     timeSlots: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
     branchId: "downtown",
+    chamberNo: "102",
+    floor: "1st",
+    address: "123 Downtown St, City",
   },
   {
     id: "dr-kamal",
@@ -33,6 +39,9 @@ export const doctors: Doctor[] = [
     availableDays: ["Monday", "Wednesday", "Friday"],
     timeSlots: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
     branchId: "downtown",
+    chamberNo: "103",
+    floor: "1st",
+    address: "123 Downtown St, City",
   },
   {
     id: "dr-johnson",
@@ -42,6 +51,9 @@ export const doctors: Doctor[] = [
     availableDays: ["Tuesday", "Thursday", "Saturday"],
     timeSlots: ["8:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
     branchId: "northside",
+    chamberNo: "201",
+    floor: "2nd",
+    address: "456 Northside Ave, City",
   },
   {
     id: "dr-oliver",
@@ -51,6 +63,9 @@ export const doctors: Doctor[] = [
     availableDays: ["Tuesday", "Thursday", "Saturday"],
     timeSlots: ["8:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
     branchId: "northside",
+    chamberNo: "202",
+    floor: "2nd",
+    address: "456 Northside Ave, City",
   },
   {
     id: "dr-williams",
@@ -60,5 +75,8 @@ export const doctors: Doctor[] = [
     availableDays: ["Monday", "Tuesday", "Thursday"],
     timeSlots: ["9:30 AM", "11:30 AM", "2:30 PM", "4:30 PM"],
     branchId: "westend",
+    chamberNo: "301",
+    floor: "3rd",
+    address: "789 West End Rd, City",
   },
 ];
