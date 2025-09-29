@@ -6,6 +6,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -93,17 +94,15 @@ export function DoctorSelection({
                             .join("")}
                         </AvatarFallback>
                       </Avatar>
-                      <h3 className="font-semibold md:text-xl text-base">
-                        {doctor.name}
-                      </h3>
+                      <h3 className="font-semibold text-base">{doctor.name}</h3>
                       <div>
-                        <p className="text-sm text-muted-foreground font-medium mb-2.5">
+                        <p className="text-sm text-muted-foreground font-medium mb-1">
                           {doctor.specialty}
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs text-muted-foreground">
                           Chamber: {doctor.chamberNo}, {doctor.floor} Floor,{" "}
                         </p>
-                        <p className="md:text-sm text-xs text-muted-foreground">
+                        <p className="text-xs text-muted-foreground">
                           {doctor.address}
                         </p>
                       </div>
@@ -117,6 +116,9 @@ export function DoctorSelection({
               )}
             </div>
             <FormMessage />
+            <FormDescription>
+              * Click on the card to select the doctor
+            </FormDescription>
           </FormItem>
         )}
       />
