@@ -45,7 +45,10 @@ export const AppointmentForm = () => {
 
   const handleDoctorSelect = (doctor: Doctor) => {
     setSelectedDoctor(doctor);
-    form.setValue("doctorId", doctor.id);
+    form.setValue("doctorId", doctor.id, {
+      shouldValidate: true,
+      shouldTouch: true,
+    });
   };
 
   return (
@@ -64,7 +67,9 @@ export const AppointmentForm = () => {
             isDateAvailable={isDateAvailable}
           />
         )}
-        <Button type="submit">Confirm Appointment</Button>
+        <Button type="submit" className="text-white">
+          Confirm Appointment
+        </Button>
       </form>
     </Form>
   );

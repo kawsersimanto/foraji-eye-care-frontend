@@ -6,7 +6,7 @@ const newPatientSchema = z.object({
   name: z.string().min(1, "Name is required"),
   phone: z.string().min(11, "Phone number must be at least 11 digits"),
   age: z.string().min(1, "Age is required"),
-  gender: z.string().optional(),
+  gender: z.string().min(1, "Gender is required"),
   notes: z.string().optional(),
   branch: z.string().min(1, "Please select a branch"),
   doctorId: z.string().min(1, "Please select a doctor"),

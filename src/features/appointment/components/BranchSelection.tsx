@@ -28,7 +28,7 @@ export function BranchSelection({ form, branches }: BranchSelectionProps) {
       <FormField
         control={form.control}
         name="branch"
-        render={({ field }) => (
+        render={({ field, formState }) => (
           <FormItem>
             <FormLabel>Choose a branch *</FormLabel>
             <FormControl>
@@ -39,6 +39,7 @@ export function BranchSelection({ form, branches }: BranchSelectionProps) {
                   label: b.name,
                   value: b.id,
                 }))}
+                hasError={!!formState.errors.branch}
                 placeholder="Choose a branch"
                 searchPlaceholder="Search branches..."
               />

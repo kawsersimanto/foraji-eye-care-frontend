@@ -29,6 +29,8 @@ interface ComboboxProps {
   onChange: (value: string) => void;
   placeholder?: string;
   searchPlaceholder?: string;
+  className?: string;
+  hasError?: boolean;
 }
 
 export const Combobox = ({
@@ -37,6 +39,8 @@ export const Combobox = ({
   onChange,
   placeholder = "Select an option",
   searchPlaceholder = "Search...",
+  className,
+  hasError = false,
 }: ComboboxProps) => {
   const [open, setOpen] = React.useState(false);
 
@@ -49,7 +53,11 @@ export const Combobox = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
+          className={cn(
+            "w-full justify-between bg-white",
+            className,
+            hasError ? "border-red-500 focus:ring-red-500" : ""
+          )}
         >
           {selectedOption ? selectedOption.label : placeholder}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
